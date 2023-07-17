@@ -33,8 +33,7 @@ exports.register = (req, res, next) => {
             process.env.JWT_SCERET, // Replace with your JWT secret
             { expiresIn: "1h" }
           );
-
-          res.setHeader("Set-Cookie", `access_token=${token}; HttpOnly; Max-Age=${60 * 60}`);
+          res.setHeader("Set-Cookie", `access_token=${token}; HttpOnly; Secure; Max-Age=${3600}; Path=/`);
           res
             .status(201)
             .json({ message: "User Created Successfully", userId: user._id });
