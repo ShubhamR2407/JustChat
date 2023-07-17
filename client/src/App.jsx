@@ -5,7 +5,7 @@ import RegisterAndLogin from "./pages/RegisterAndLogin";
 import Chat from "./pages/Chat";
 
 function App() {
-  axios.defaults.baseURL = "http://localhost:5000/api";
+  axios.defaults.baseURL = "https://just-chat-server-ebon.vercel.app/api";
   axios.defaults.withCredentials = true;
   return (
       <Routes>
