@@ -38,7 +38,7 @@ const Chat = () => {
   }, []);
 
   const connectToWS = () => {
-    const ws = new WebSocket("ws://localhost:5000");
+    const ws = new WebSocket("ws://just-chat-server-ebon.vercel.app/api");
     setWs(ws);
     ws.addEventListener("message", handleMessage);
     ws.addEventListener("close", () => {
