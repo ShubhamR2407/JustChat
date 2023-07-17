@@ -21,6 +21,9 @@ app.use('/uploads', express.static(__dirname + '/uploads'))
 app.use(express.json());
 app.use(cookieParser());
 
+app.get("/",(req,res) => {
+  res.json("hello");
+})
 app.use("/api", userRoutes);
 app.use("/api", messageRoutes)
 
