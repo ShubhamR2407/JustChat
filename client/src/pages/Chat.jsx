@@ -38,7 +38,7 @@ const Chat = () => {
   }, []);
 
   const connectToWS = () => {
-    const ws = new WebSocket("wss://" + window.location.host)
+    const ws = new WebSocket("wss://" + window.location.host:5000)
     setWs(ws);
     ws.addEventListener("message", handleMessage);
     ws.addEventListener("close", () => {
