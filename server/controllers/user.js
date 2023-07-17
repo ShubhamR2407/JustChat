@@ -34,11 +34,7 @@ exports.register = (req, res, next) => {
             { expiresIn: "1h" }
           );
 
-          res.cookie("access_token", token, {
-            httpOnly: true,
-            maxAge: 1000 * 60 * 60, // 1 hour in milliseconds
-            secure: true,
-          });
+          res.setHeader("Set-Cookie", `access_token=${token}; HttpOnly; Max-Age=${60 * 60}`);
           res
             .status(201)
             .json({ message: "User Created Successfully", userId: user._id });
