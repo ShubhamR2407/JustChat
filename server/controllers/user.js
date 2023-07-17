@@ -33,12 +33,7 @@ exports.register = (req, res, next) => {
             process.env.JWT_SCERET, 
             { expiresIn: "1h" }
           );
-          res.cookie("access_token", token, {
-            sameSite: "none",
-            secure: true,
-            httpOnly: true,
-            maxAge: 1000 * 60 * 60, // 1 hour in milliseconds
-          });
+          res.setHeader("Set-Cookie", `access_token=${token}; HttpOnly; Secure; SameSite=None; Max-Age=${3600}; Path=/`);
           res
             .status(201)
             .json({ message: "User Created Successfully", userId: user._id });
@@ -83,12 +78,7 @@ exports.login = (req, res, next) => {
         { expiresIn: "1h" }
       );
 
-      res.cookie("access_token", token, {
-        sameSite: "none",
-        secure: true,
-        httpOnly: true,
-        maxAge: 1000 * 60 * 60, // 1 hour in milliseconds
-      });
+      res.setHeader("Set-Cookie", `access_token=${token}; HttpOnly; Secure; SameSite=None; Max-Age=${3600}; Path=/`);
 
       res.status(200).json({ token, userId: loadedUser._id });
     })
