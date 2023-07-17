@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const ws = require("ws");
-const configureWebSocket = require("./websocket");
+const configureWebSocket = require("./server");
 require("dotenv").config();
 
 const userRoutes = require("./routes/user");
