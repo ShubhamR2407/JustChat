@@ -12,7 +12,7 @@ const configureWebSocket = require("./server");
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://just-chat-client.vercel.app",
     methods: ["POST", "GET"],
     credentials: true,
   })
