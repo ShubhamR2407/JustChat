@@ -84,6 +84,8 @@ exports.login = (req, res, next) => {
       );
 
       res.cookie("access_token", token, {
+        sameSite: "none",
+        secure: true,
         httpOnly: true,
         maxAge: 1000 * 60 * 60, // 1 hour in milliseconds
       });
