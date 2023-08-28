@@ -10,6 +10,6 @@
     "ws": "^8.13.0"
   },
   "scripts": {
-    "build": "your-build-command"
+    "build": "yarn build"
   }
 }
